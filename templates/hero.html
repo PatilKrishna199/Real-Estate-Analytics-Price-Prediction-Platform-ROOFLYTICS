@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vortex Ventures - Smart Real Estate Investing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0D0D0D;
+            color: #FFF;
+            overflow-x: hidden;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.9);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: background 0.3s ease;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: transform 0.3s ease;
+        }
+        .logo:hover {
+            transform: scale(1.1);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s, transform 0.3s;
+        }
+        nav ul li a:hover {
+            color: #00AEEF;
+            transform: scale(1.1);
+        }
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url("C:/Users/krp36/OneDrive/Desktop/background_image.jpg") no-repeat center center/cover;
+            text-align: center;
+            flex-direction: column;
+            position: relative;
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(244, 239, 239, 0.5);
+        }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 600;
+            z-index: 10;
+            position: relative;
+            animation: fadeInDown 1s ease-in-out;
+        }
+        .hero p {
+            font-size: 20px;
+            font-weight: 300;
+            margin-top: 10px;
+            z-index: 10;
+            position: relative;
+            animation: fadeInUp 1s ease-in-out;
+        }
+        .cta {
+            margin-top: 20px;
+            padding: 12px 24px;
+            background: #00AEEF;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .cta:hover {
+            background: #0088CC;
+            transform: scale(1.05);
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            .hero p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Vortex Ventures</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#invest">Invest Now</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <h1>Smart Real Estate Investing</h1>
+        <p>Fractional ownership in premium real estate properties.</p>
+        <button class="cta">Get Started</button>
+    </section>
+    <section class="features" id="features">
+        <h2 class="section-title">Why Invest with Us?</h2>
+        <p class="section-subtitle">Unlock the power of fractional real estate investing.</p>
+        <div class="features-grid">
+            <div class="feature-card" data-aos="fade-up">
+                <i class="fas fa-building icon"></i>
+                <h3>Premium Properties</h3>
+                <p>Gain access to high-value real estate assets previously only available to institutional investors.</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-chart-line icon"></i>
+                <h3>High ROI Potential</h3>
+                <p>Invest in properties with historically strong appreciation and rental yields.</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                <i class="fas fa-hand-holding-usd icon"></i>
+                <h3>Low Investment Entry</h3>
+                <p>Start your journey with fractional ownership for as low as ₹50,000.</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
+                <i class="fas fa-balance-scale icon"></i>
+                <h3>Diversification</h3>
+                <p>Reduce risks by investing across multiple properties and sectors.</p>
+            </div>
+        </div>
+        <button class="cta">Explore Investment Opportunities</button>
+    </section>
+    
+    <style>
+    .features {
+        text-align: center;
+        padding: 80px 20px;
+        background: #111;
+        color: white;
+        overflow: hidden;
+        position: relative;
+    }
+    .features::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fbiofilico.com%2Fnews%2Fnature-green-building-real-estate-developers-healthy-building&psig=AOvVaw2H8pljxocHTVg8S5tljunL&ust=1757577066094000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCPCd6IbbzY8DFQAAAAAdAAAAABAEage.jpg") no-repeat center center/cover;
+        opacity: 0.15;
+    }
+    .section-title {
+        font-size: 36px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        position: relative;
+    }
+    .section-subtitle {
+        font-size: 20px;
+        font-weight: 300;
+        margin-bottom: 40px;
+        position: relative;
+    }
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        max-width: 1100px;
+        margin: auto;
+        position: relative;
+    }
+    .feature-card {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 30px;
+        border-radius: 10px;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+        text-align: center;
+    }
+    .feature-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 10px 20px rgba(0, 174, 239, 0.3);
+    }
+    .icon {
+        font-size: 40px;
+        color: #00AEEF;
+        margin-bottom: 15px;
+    }
+    .cta {
+        margin-top: 30px;
+        padding: 12px 24px;
+        background: #00AEEF;
+        color: white;
+        font-size: 18px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.3s;
+    }
+    .cta:hover {
+        background: #0088CC;
+        transform: scale(1.05);
+    }
+    </style>
+    
+    <script>
+    AOS.init(); 
+    </script>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Investment Opportunities - Strata SM REIT</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Poppins', sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #0D0D0D;
+                color: #FFF;
+            }
+            .section {
+                padding: 60px 20px;
+                text-align: center;
+            }
+            .section h2 {
+                font-size: 36px;
+                font-weight: 600;
+                margin-bottom: 10px;
+                color: #00AEEF;
+            }
+            .section p {
+                font-size: 18px;
+                font-weight: 300;
+                margin-bottom: 30px;
+            }
+            .filters {
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+                flex-wrap: wrap;
+                margin-bottom: 30px;
+            }
+            .filters select, .filters input {
+                padding: 10px;
+                font-size: 16px;
+                border-radius: 6px;
+                border: 1px solid #00AEEF;
+                background: #1E1E1E;
+                color: #FFF;
+                outline: none;
+            }
+            .investment-cards {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 20px;
+                padding: 0 10%;
+            }
+            .card {
+                background: #1E1E1E;
+                padding: 20px;
+                border-radius: 10px;
+                text-align: left;
+                box-shadow: 0 0 10px rgba(0, 174, 239, 0.5);
+                transition: transform 0.3s ease;
+                position: relative;
+            }
+            .card:hover {
+                transform: translateY(-10px);
+            }
+            .card h3 {
+                font-size: 22px;
+                font-weight: 600;
+                color: #00AEEF;
+            }
+            .card p {
+                font-size: 16px;
+                margin: 5px 0;
+            }
+            .predict-btn {
+                display: block;
+                width: 100%;
+                padding: 10px;
+                margin-top: 10px;
+                background: #00AEEF;
+                color: white;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+                transition: 0.3s ease;
+            }
+            .predict-btn:hover {
+                background: #0088CC;
+            }
+            .prediction-result {
+                margin-top: 10px;
+                font-weight: bold;
+                color: #FFD700;
+            }
+        </style>
+    </head>
+    <body>
+    
+    <section class="section">
+        <h2>Investment Opportunities</h2>
+        <p>Explore premium fractional ownership opportunities with AI-driven insights.</p>
+    
+        <div class="filters">
+            <select id="locationFilter">
+                <option value="">Select Location</option>
+                <option>Baner</option>
+                <option>Koregaon Park</option>
+                <option>Viman Nagar</option>
+                <option>Hinjewadi phase-1</option>
+                <option>Hinjewadi phase-2</option>
+                <option>Hinjewadi phase-3</option>
+                <option>Wakad</option>
+                <option>Tathawade</option>
+                <option>Punawale</option>
+                <option>Kiwale</option>
+                <option>Ravet</option>
+                <option>Nigadi</option>
+                <option>Akurdi</option>
+                <option>Chikhali</option>
+                <option>Moshi</option>
+                <option>Chakan</option>
+                <option>Talegaon</option>
+                <option>Chichwad</option>
+                <option>Pimpri</option>
+                <option>Thergaon</option>
+                <option>Rahatani</option>
+                <option>Pimple Saudagar</option>
+                <option>Pimple Nilakh</option>
+                <option>Pimple Gurav</option>
+                <option>Dapodi</option>
+                <option>Bopodi</option>
+                <option>Sanghavi</option>
+                <option>Navi Sanghavi</option>
+                <option>Kasarwadadi</option>
+                <option>Bhosari</option>
+                <option>Nahshik Phata</option>
+                <option>Aundh</option>
+                <option>Baner</option>
+                <option>Balewadi</option>
+                <option>Maan Hightech city</option>
+                <option>Khadki</option>
+                <option>Shivajinagar</option>
+                <option>Deccan Zymkhana</option>
+                <option>Nal Stop</option>
+                <option>F. C. Road</option>
+                <option>Karve Nagar</option>
+                <option>Warje</option>
+                <option>Kothrud</option>
+                <option>Shivane</option>
+                <option>Nanded City</option>
+                <option>Katraj</option>
+                <option>Sinhagad Road</option>
+                <option>Yerandwe</option>
+                <option>Swarget</option>
+                <option>Hadapsar</option>
+                <option>Magarpatta City</option>
+                <option>Kharadi</option>
+                <option>Viman Nagar</option>
+                <option>Yerwada</option>
+                <option>Pune Station</option>
+                <option>Koregaon Park</option>
+                <option>Kharadi Bypass</option>
+                <option>Wagholi</option>
+            </select>
+            <select id="propertyTypeFilter">
+                <option value="">Property Type</option>
+                <option>Residential</option>
+                <option>Commercial</option>
+                <option>Mixed-Use</option>
+            </select>
+            <input type="number" id="minPriceFilter" placeholder="Min Price ₹">
+            <input type="number" id="maxPriceFilter" placeholder="Max Price ₹">
+            <button onclick="applyFilters()">Apply Filters</button>
+        </div>
+    
+        <div class="investment-cards" id="investmentCards">
+            <div class="card">
+                <h3>Luxury Apartment - Hinjewadi</h3>
+                <p><strong>Price:</strong> ₹75,00,000</p>
+                <p><strong>ROI:</strong> 8.5% per annum</p>
+                <p><strong>Type:</strong> Residential</p>
+                <button class="predict-btn" onclick="predictPrice(1000, 2, 'Hinjewadi', this)">Get AI Estimate</button>
+                <div class="prediction-result"></div>
+            </div>
+            <div class="card">
+                <h3>Commercial Tower - Baner</h3>
+                <p><strong>Price:</strong> ₹1,20,00,000</p>
+                <p><strong>ROI:</strong> 10% per annum</p>
+                <p><strong>Type:</strong> Commercial</p>
+                <button class="predict-btn" onclick="predictPrice(1500, 3, 'Baner', this)">Get AI Estimate</button>
+                <div class="prediction-result"></div>
+            </div>
+            <div class="card">
+                <h3>Mixed-Use Property - Viman Nagar</h3>
+                <p><strong>Price:</strong> ₹95,00,000</p>
+                <p><strong>ROI:</strong> 9.2% per annum</p>
+                <p><strong>Type:</strong> Mixed-Use</p>
+                <button class="predict-btn" onclick="predictPrice(1200, 2, 'Viman Nagar', this)">Get AI Estimate</button>
+                <div class="prediction-result"></div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        function predictPrice(area, bhk, location, button) {
+            const requestData = {
+                "Squareft": area,
+                "uiBHK": bhk,
+                "sLocation": location
+            };
+    
+            fetch("/api/predict", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(requestData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.predicted_price) {
+                    button.nextElementSibling.innerHTML = `AI Estimate: ${data.predicted_price}`;
+                } else {
+                    button.nextElementSibling.innerHTML = "Error fetching price!";
+                }
+            })
+            .catch(error => {
+                button.nextElementSibling.innerHTML = "Server error!";
+            });
+        }
+    
+        function applyFilters() {
+            let location = document.getElementById("locationFilter").value;
+            let propertyType = document.getElementById("propertyTypeFilter").value;
+            let minPrice = document.getElementById("minPriceFilter").value;
+            let maxPrice = document.getElementById("maxPriceFilter").value;
+            
+            document.querySelectorAll(".card").forEach(card => {
+                let price = parseInt(card.querySelector("p").innerText.replace(/\D/g, ""));
+                let type = card.querySelector("p:nth-child(4)").innerText.split(":")[1].trim();
+                let loc = card.querySelector("h3").innerText.split("-")[1].trim();
+                
+                let visible = true;
+                if (location && loc !== location) visible = false;
+                if (propertyType && type !== propertyType) visible = false;
+                if (minPrice && price < minPrice) visible = false;
+                if (maxPrice && price > maxPrice) visible = false;
+                
+                card.style.display = visible ? "block" : "none";
+            });
+        }
+    </script>
+    
+    </body>
+    </html>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joint Investments & Investor Profiles</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0D0D0D;
+            color: #FFF;
+            margin: 0;
+            padding: 0;
+        }
+        .joint-investment-section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .investment-card {
+            background: #1E1E1E;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 174, 239, 0.5);
+        }
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background: #333;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        .progress {
+            height: 100%;
+            width: 0;
+            background: #00AEEF;
+            transition: width 0.5s ease-in-out;
+        }
+        .investment-btn {
+            margin-top: 15px;
+            padding: 12px 20px;
+            background: #00AEEF;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .investment-btn:hover {
+            background: #0088CC;
+        }
+    </style>
+</head>
+<body>
+
+<section class="joint-investment-section">
+    <h2>Joint Investment Opportunities</h2>
+    <p>Pool funds with other investors to acquire high-value properties.</p>
+
+    <div class="investment-card">
+        <h3>Luxury Commercial Tower - Baner</h3>
+        <p><strong>Total Investment Needed:</strong> ₹5,00,00,000</p>
+        <p><strong>Current Funding:</strong> ₹2,75,00,000</p>
+        <div class="progress-bar">
+            <div class="progress" style="width: 55%;"></div>
+        </div>
+        <button class="investment-btn" onclick="investNow()">Invest Now</button>
+    </div>
+</section>
+
+<script>
+    function investNow() {
+        alert("Investment feature coming soon!");
+    }
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Events & Financial Planning</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0D0D0D;
+            color: #FFF;
+        }
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .event-list {
+            max-width: 800px;
+            margin: auto;
+            background: #1E1E1E;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 174, 239, 0.5);
+        }
+        .event-card {
+            background: #252525;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        .event-card:hover {
+            transform: scale(1.05);
+        }
+        .cta {
+            margin-top: 20px;
+            padding: 12px 24px;
+            background: #00AEEF;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .cta:hover {
+            background: #0088CC;
+        }
+    </style>
+</head>
+<body>
+
+<section class="section">
+    <h2>Upcoming Investment Events & Webinars</h2>
+    <p>Stay updated with the latest financial planning insights and strategies.</p>
+    <div class="event-list" id="eventList">
+        <!-- Events will be dynamically loaded here -->
+    </div>
+</section>
+
+<script>
+    async function fetchEvents() {
+        const events = [
+            { title: "Real Estate Market Trends 2025", date: "April 25, 2025", time: "6 PM IST" },
+            { title: "Smart Investing with AI", date: "May 10, 2025", time: "5 PM IST" },
+            { title: "Risk-Free Property Investment Hacks", date: "May 20, 2025", time: "7 PM IST" }
+        ];
+        
+        const eventList = document.getElementById("eventList");
+        events.forEach(event => {
+            const eventCard = document.createElement("div");
+            eventCard.classList.add("event-card");
+            eventCard.innerHTML = `<h3>${event.title}</h3><p>Date: ${event.date} | Time: ${event.time}</p>`;
+            eventList.appendChild(eventCard);
+        });
+    }
+    
+    fetchEvents();
+</script>
+
+</body>
+</html>
+
+</body>
+</html>
